@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>AutoFill</title>
-  <link rel="stylesheet" href="../styles/popup.css" />
+  <title>AI Autofill</title>
+  <style>
+    body { font-family: Arial; width: 250px; padding: 10px; }
+    input, button { width: 100%; margin-top: 8px; }
+  </style>
 </head>
 <body>
-  <div id="container">
-    <h2>AutoFill</h2>
-    <select id="docType">
-      <option value="Aadhaar">Aadhaar</option>
-      <option value="PAN">PAN</option>
-      <option value="CasteCertificate">Caste Certificate</option>
-    </select>
-    <button id="fillBtn">Auto Fill</button>
-  </div>
+  <h3>AI Form Autofill</h3>
+  <input type="text" id="apiKey" placeholder="Enter OpenAI API Key" />
+  <button id="saveKeyBtn">💾 Save API Key</button>
+  <button id="fillBtn">✍️ Fill Form</button>
   <script src="popup.js"></script>
 </body>
 </html>

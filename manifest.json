@@ -1,33 +1,26 @@
 {
   "manifest_version": 3,
-  "name": "AutoFill Prototype",
+  "name": "AI Form Autofill",
   "version": "1.0",
-  "description": "A prototype Chrome extension to autofill forms from backend data.",
+  "description": "Autofill forms using OpenAI field label matching.",
+  "permissions": ["scripting", "storage", "activeTab"],
+  "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "popup/popup.html",
     "default_icon": {
-      "16": "assets/icon.png",
+    "16": "assets/icon.png",
       "48": "assets/icon.png",
       "128": "assets/icon.png"
     }
   },
-  "permissions": [
-    "activeTab",
-    "scripting",
-    "storage"
-  ],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"]
+      "js": ["content.js"],
+      "run_at": "document_idle"
     }
-  ],
-  "icons": {
-    "16": "assets/icon.png",
-    "48": "assets/icon.png",
-    "128": "assets/icon.png"
-  }
+  ]
 }
